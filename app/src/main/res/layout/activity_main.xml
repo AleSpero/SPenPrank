@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:clipChildren="false"
+    android:padding="20dp">
 
-    <Switch
-        android:id="@+id/enableSound"
-        android:layout_width="166dp"
-        android:layout_height="25dp"
-        android:text="Enable Sound"
-        android:layout_centerInParent="true"
-        tools:layout_editor_absoluteX="100dp"
-        tools:layout_editor_absoluteY="116dp" />
+    <com.alespero.expandablecardview.ExpandableCardView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:inner_view="@layout/settings"
+        app:expandOnClick="true"
+        app:title="Settings" />
 
-</RelativeLayout>
+    <com.alespero.expandablecardview.ExpandableCardView
+        android:id="@+id/settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:inner_view="@layout/settings"
+        app:expandOnClick="true"
+        app:title="Sounds" />
+
+
+
+</LinearLayout>
